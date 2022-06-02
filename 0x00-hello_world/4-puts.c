@@ -1,4 +1,5 @@
 #include <stdio.h>
+./betty-style.pl $CFILE
 
 /**
  * * main - Entry point
