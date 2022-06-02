@@ -1,8 +1,7 @@
 #include <stdio.h>
-./betty-style.pl $CFILE
 
 /**
- * * main - Entry point
+ * * ./betty-style.pl main - Entry point
  * 
  * Return: Always 0 (Success)
  */
