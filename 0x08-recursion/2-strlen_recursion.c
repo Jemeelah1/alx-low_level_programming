@@ -1,17 +1,14 @@
 #include "main.h"
 ?
 /**
- *_strlen_recursion - length of a string
- *@s: pointer block of memory to fill
- *Return: strlen_recursion
+ * _strlen_recursion - returns the length of a string
+ * @s: the string to check the length of
+ * Return: an integer that displays the length of the string
  */
 int _strlen_recursion(char *s)
 {
-	char s[] = "Programming is fun";
-	int i;
+	if (*s != '\0')
+		return (1 + _strlen_recursion(s + 1));
 
-	for (i = 0; s[i] != '\0'; ++i);
-
-	printf("Length of the string: %d", i);
 	return (0);
 }
