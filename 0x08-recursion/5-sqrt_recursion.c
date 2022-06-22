@@ -12,9 +12,7 @@ int helper(int a, int b)
 		return (-1);
 	}
 
-	else if (b * b == a)
-	
-	{
+	else if (b * b == a) {
 		return(b);
 	}
 
