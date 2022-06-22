@@ -1,20 +1,16 @@
 #include "main.h"
 /**
- *factorial - factorial of a given number
- *@n: pointer block of memory to fill
- *Return: factorial
+ * factorial - returns the factorial of a given number
+ * @n: the number to find the factorials of
+ * Return: the factorial of @n
  */
 int factorial(int n)
 {
-int r;
+	if (n < 0)
+		return (-1);
 
-r = factorial(1);
-printf("%d\n", r);
-r = factorial(5);
-printf("%d\n", r);
-r = factorial(10);
-printf("%d\n", r);
-r = factorial(-1024);
-printf("%d\n", r);
-return (0);
+	else if (n == 0)
+		return (1);
+
+	return (n * factorial(n - 1));
 }
