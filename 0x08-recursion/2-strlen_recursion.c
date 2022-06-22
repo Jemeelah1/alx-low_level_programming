@@ -7,13 +7,11 @@
  */
 int _strlen_recursion(char *s)
 {
-	/*Base condition*/
-	if (*s == '\0')
-	{
-		return (0);
-	}
-	else
-	{
-		return (1 + _strlen_recursion(s + 1)); /*Sum 1*/
-	}
+	char s[] = "Programming is fun";
+	int i;
+
+	for (i = 0; s[i] != '\0'; ++i);
+
+	printf("Length of the string: %d", i);
+	return (0);
 }
