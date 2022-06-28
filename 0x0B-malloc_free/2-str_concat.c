@@ -1,30 +1,65 @@
-#include <stdlib.h>
+#include "main.h"
 /**
- * _calloc - allocates memory for an array
- * @nmemb: the number of elements
- * @size: the size of that element type
- * Return: A pointer to the allocated memeory. NULL if nmemb or size is 0.
+ * _strlen - count arrray
+ * @s: array of elements
+ * Return: i
  */
-void *_calloc(unsigned int nmemb, unsigned int size)
+int _strlen(char *s)
 {
-	char *ar;
 	unsigned int i;
 
-	if (size == 0 || nmemb == 0)
+	i = 0;
+	while (s[i] != '\0') /*Count character of string*/
+	{
+		i++;
+	}
+
+	return (i);
+}
+/**
+ * str_concat - back a pointer to array
+ * @s1: Array one
+ * @s2: Array two
+ * Return: Always an array dinamic
+ */
+char *str_concat(char *s1, char *s2)
+{
+	char *dst;
+	unsigned int i, j, size;
+
+	/*If the array is empty*/
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
+
+	/*count size total*/
+	size = (_strlen(s1) + _strlen(s2) + 1);
+
+	/*malloc*/
+	dst = (char *) malloc(size * sizeof(char));
+
+	if (dst == 0)
 	{
 		return (NULL);
 	}
 
-	ar = malloc(size * nmemb);
-	if (ar == NULL)
+	/*Concatenate arrays*/
+	for (i = 0; *(s1 + i) != '\0'; i++)
 	{
-		return (NULL);
+		*(dst + i) = *(s1 + i);
 	}
 
-	for (i = 0; i < (size * nmemb); i++)
+	for (j = 0; *(s2 + j) != '\0'; j++)
 	{
-		ar[i] = 0;
+		*(dst + i) = *(s2 + j);
+		i++;
 	}
 
-	return (ar);
+	return (dst);
 }
