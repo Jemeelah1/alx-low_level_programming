@@ -130,9 +130,13 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	for (len1 = 0; argv[1][len1]; len1++)
-	;
+	{
+		return (0);
+	}
 	for (len2 = 0; argv[2][len2]; len2++)
-	;
+	{
+		return (0);
+	}
 	lenres = len1 + len2;
 	tabres = _calloc(lenres, sizeof(int));
 	if (tabres == NULL)
