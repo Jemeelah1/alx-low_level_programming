@@ -26,6 +26,7 @@ char *_strdup(char *str)
 		j++;
 	}
 	ar[j] = 0;
+
 	return (ar);
 }
 /**
@@ -44,7 +45,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new = malloc(sizeof(dog_t));
 	if (new == NULL)
 		return (NULL);
-
 	ncpy = _strdup(name);
 	if (!ncpy && name)
 	{
@@ -58,7 +58,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(new);
 	        return (NULL);
 	}
-
 	new->name = ncpy;
 	new->age = age;
 	new->owner = ocpy;
